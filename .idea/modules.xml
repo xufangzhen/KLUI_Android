@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KLUI_Android.iml" filepath="$PROJECT_DIR$/KLUI_Android.iml" />
+      <module fileurl="file://D:\Kaola\1\KLUI_Android\kluidemo\app.iml" filepath="D:\Kaola\1\KLUI_Android\kluidemo\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kluidemo/kluidemo.iml" filepath="$PROJECT_DIR$/kluidemo/kluidemo.iml" />
+    </modules>
+  </component>
+</project>

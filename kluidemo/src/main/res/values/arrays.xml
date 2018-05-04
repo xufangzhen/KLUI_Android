@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_category">
+        <item> TitleLayout </item>
+        <item> VerticalNestedScrollLayout </item>
+        <item> SmartTabLayout </item>
+        <item> SmartRefreshLayout </item>
+        <item> 待添加 </item>
+        <item> 待添加 </item>
+        <item> 待添加 </item>
+        <item> 待添加 </item>
+        <item> 待添加 </item>
+        <item> 待添加 </item>
+        <item> 待添加 </item>
+    </string-array>
+
+    <string-array name="index_bar_list">
+        <item>aaa</item>
+        <item>aaa</item>
+        <item>aa</item>
+        <item>a</item>
+        <item>bbb</item>
+        <item>bbb</item>
+        <item>bb</item>
+        <item>b</item>
+        <item>ccc</item>
+        <item>ccc</item>
+        <item>cc</item>
+        <item>c</item>
+        <item>ddd</item>
+        <item>ddd</item>
+        <item>dd</item>
+        <item>d</item>
+        <item>eee</item>
+        <item>eee</item>
+        <item>ee</item>
+        <item>e</item>
+        <item>fff</item>
+        <item>fff</item>
+        <item>ff</item>
+        <item>f</item>
+    </string-array>
+</resources>

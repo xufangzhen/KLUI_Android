@@ -1,0 +1,599 @@
+<resources>
+
+    <!-- 圆形图标控件 -->
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="border_width"/>
+        <attr format="color" name="border_color"/>
+    </declare-styleable>
+
+    <declare-styleable name="PtrWithStateViewLayout">
+        <!-- 无数据时页面 -->
+        <attr format="reference" name="layout_empty"/>
+        <!-- 无网络页面 -->
+        <attr format="reference" name="layout_no_network"/>
+        <!-- 无网络页面 -->
+        <attr format="reference" name="layout_error"/>
+        <!-- 第一页加载中页面 -->
+        <attr format="reference" name="layout_loading"/>
+    </declare-styleable>
+
+    <!-- 带更多功能的RecyclerView -->
+    <declare-styleable name="BaseRecyclerView">
+        <!-- 是否显示无线长，即有多少数据显示多长 -->
+        <attr format="boolean" name="recyclerMaxLength"/>
+        <!-- 是否允许子view再padding范围内绘制 -->
+        <attr format="boolean" name="recyclerClipToPadding"/>
+        <!-- padding -->
+        <attr format="dimension" name="recyclerPadding"/>
+        <attr format="dimension" name="recyclerPaddingTop"/>
+        <attr format="dimension" name="recyclerPaddingBottom"/>
+        <attr format="dimension" name="recyclerPaddingLeft"/>
+        <attr format="dimension" name="recyclerPaddingRight"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="AutofitTextView">
+        <!-- Minimum size of the text. -->
+        <attr format="dimension" name="minTextSize"/>
+        <!-- Amount of precision used to calculate the correct text size to fit within its
+        bounds. Lower precision is more precise and takes more time. -->
+        <attr format="float" name="precision"/>
+        <!-- Defines whether to automatically resize text to fit to the view's bounds. -->
+        <attr format="boolean" name="sizeToFit"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="StateButton">
+
+        <!--text color-->
+        <attr format="color|reference" name="normalTextColor"/>
+        <attr format="color|reference" name="pressedTextColor"/>
+        <attr format="color|reference" name="unableTextColor"/>
+
+        <!--stroke width and color, dash width, dash gap-->
+        <attr format="dimension|reference" name="strokeDashWidth"/>
+        <attr format="dimension|reference" name="strokeDashGap"/>
+        <attr format="dimension|reference" name="normalStrokeWidth"/>
+        <attr format="dimension|reference" name="pressedStrokeWidth"/>
+        <attr format="dimension|reference" name="unableStrokeWidth"/>
+        <attr format="color|reference" name="normalStrokeColor"/>
+        <attr format="color|reference" name="pressedStrokeColor"/>
+        <attr format="color|reference" name="unableStrokeColor"/>
+
+        <!--background color-->
+        <attr format="color|reference" name="normalBackgroundColor"/>
+        <attr format="color|reference" name="pressedBackgroundColor"/>
+        <attr format="color|reference" name="unableBackgroundColor"/>
+
+        <!--background radius-->
+        <attr format="dimension|reference" name="radiu"/>
+        <attr format="boolean|reference" name="round"/>
+
+        <!--animation duration-->
+        <attr format="integer|reference" name="animationDuration"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr format="reference" name="kswThumbDrawable"/>
+        <attr format="color|reference" name="kswThumbColor"/>
+        <attr format="dimension|reference" name="kswThumbMargin"/>
+        <attr format="dimension|reference" name="kswThumbMarginTop"/>
+        <attr format="dimension|reference" name="kswThumbMarginBottom"/>
+        <attr format="dimension|reference" name="kswThumbMarginLeft"/>
+        <attr format="dimension|reference" name="kswThumbMarginRight"/>
+        <attr format="dimension|reference" name="kswThumbWidth"/>
+        <attr format="dimension|reference" name="kswThumbHeight"/>
+        <attr format="dimension|reference" name="kswThumbRadius"/>
+        <attr format="dimension|reference" name="kswBackRadius"/>
+        <attr format="reference" name="kswBackDrawable"/>
+        <attr format="color|reference" name="kswBackColor"/>
+        <attr format="boolean" name="kswFadeBack"/>
+        <attr format="float" name="kswBackMeasureRatio"/>
+        <attr format="integer" name="kswAnimationDuration"/>
+        <attr format="color|reference" name="kswTintColor"/>
+        <attr format="string" name="kswTextOn"/>
+        <attr format="string" name="kswTextOff"/>
+        <attr format="dimension" name="kswTextMarginH"/>
+    </declare-styleable>
+
+    <declare-styleable name="CountDownWidget">
+        <!-- 时间格式 -->
+        <attr format="string" name="timeFormat"/>
+        <!-- 倒计时字体大小 -->
+        <attr format="dimension" name="timeTextSize"/>
+        <!-- 倒计时字体颜色 -->
+        <attr format="color" name="timeTextColor"/>
+        <!-- 时分秒之间冒号字体大小 -->
+        <attr format="dimension" name="colonTextSize"/>
+        <!--- 时分秒之间冒号字体的颜色 -->
+        <attr format="color" name="colonTextColor"/>
+        <!-- 倒计时时分秒背景 -->
+        <attr format="reference|color" name="timeBackground"/>
+        <!-- 时分秒之间冒号背景 -->
+        <attr format="reference|color" name="colonBackground"/>
+        <!-- 倒计时最小高度 -->
+        <attr format="dimension" name="timeMinHeight" />
+        <!-- 倒计时最小宽度 -->
+        <attr format="dimension" name="timeMinWidth" />
+        <!-- 倒计时之间冒号的最小高度 -->
+        <attr format="dimension" name="colonMinHeight" />
+        <!-- 时分秒之间冒号的最小宽度 -->
+        <attr format="dimension" name="colonMinWidth" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout">
+        <attr format="dimension" name="horizontalSpacing"/>
+        <attr format="dimension" name="verticalSpacing"/>
+        <attr format="enum" name="orientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr format="boolean" name="debugDraw"/>
+        <attr format="boolean" name="singleLine"/>
+        <attr format="integer" name="lineNum"/>
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout_LayoutParams">
+        <attr format="boolean" name="layout_newLine"/>
+        <attr format="dimension" name="layout_horizontalSpacing"/>
+        <attr format="dimension" name="layout_verticalSpacing"/>
+    </declare-styleable>
+
+    <declare-styleable name="FlowHorizontalLayout">
+        <attr format="dimension" name="landscapeSpacing"/>
+        <attr format="dimension" name="portraitSpacing"/>
+        <attr name="landscapeGravity">
+            <flag name="start" value="0"/>
+            <flag name="center" value="1"/>
+            <flag name="end" value="2"/>
+        </attr>
+        <attr name="portraitGravity">
+            <flag name="start" value="0"/>
+            <flag name="center" value="1"/>
+            <flag name="end" value="2"/>
+        </attr>
+        <attr format="integer" name="lineNums"/>
+    </declare-styleable>
+
+    <declare-styleable name="ProgressLayout">
+        <attr format="color" name="progressBackground"/>
+        <attr format="boolean" name="progress"/>
+    </declare-styleable>
+
+    <declare-styleable name="LoadingButton">
+        <attr format="string" name="pbText"/>
+        <attr format="string" name="pbLoadingText"/>
+        <attr format="dimension" name="pbTextSize"/>
+        <attr format="color|reference" name="pbTextColor"/>
+        <attr format="color|reference" name="pbProgressColor"/>
+    </declare-styleable>
+
+    <!-- Kaola PageIndicator Style Start -->
+    <declare-styleable name="KaolaPageIndicator">
+        <attr name="pageindicator_orientation">
+            <enum name="vertical" value="1"/>
+            <enum name="horizontal" value="2"/>
+        </attr>
+        <attr format="reference" name="selected"/>
+        <attr format="reference" name="unselected"/>
+        <attr format="dimension" name="indicator_space"/>
+    </declare-styleable>
+    <!-- Kaola PageIndicator Style End -->
+
+    <!-- Page Indicator Style Start -->
+    <declare-styleable name="ViewPagerIndicator">
+        <!-- Style of the circle indicator. -->
+        <attr format="reference" name="vpiCirclePageIndicatorStyle"/>
+        <!-- Style of the icon indicator's views. -->
+        <attr format="reference" name="vpiIconPageIndicatorStyle"/>
+        <!-- Style of the line indicator. -->
+        <attr format="reference" name="vpiLinePageIndicatorStyle"/>
+        <!-- Style of the title indicator. -->
+        <attr format="reference" name="vpiTitlePageIndicatorStyle"/>
+        <!-- Style of the tab indicator's tabs. -->
+        <attr format="reference" name="vpiTabPageIndicatorStyle"/>
+        <!-- Style of the underline indicator. -->
+        <attr format="reference" name="vpiUnderlinePageIndicatorStyle"/>
+    </declare-styleable>
+
+    <declare-styleable name="CirclePageIndicator">
+        <!-- Whether or not the indicators should be centered. -->
+        <attr name="centered"/>
+        <!-- Color of the filled circle that represents the current page. -->
+        <attr format="color" name="fillColor"/>
+        <!-- Color of the filled circles that represents pages. -->
+        <attr format="color" name="pageColor"/>
+        <!-- Orientation of the indicator. -->
+        <attr name="android:orientation"/>
+        <!-- Radius of the circles. This is also the spacing between circles. -->
+        <attr format="dimension" name="radius"/>
+        <!-- Whether or not the selected indicator snaps to the circles. -->
+        <attr format="boolean" name="snap"/>
+        <!-- Color of the open circles. -->
+        <attr format="color" name="strokeColor"/>
+        <!-- Width of the stroke used to draw the circles. -->
+        <attr name="strokeWidth"/>
+        <!-- View background -->
+        <attr name="android:background"/>
+    </declare-styleable>
+
+    <declare-styleable name="LinePageIndicator">
+        <!-- Whether or not the indicators should be centered. -->
+        <attr name="centered"/>
+        <!-- Color of the unselected lines that represent the pages. -->
+        <attr name="unselectedColor"/>
+        <!-- Color of the selected line that represents the current page. -->
+        <attr name="selectedColor"/>
+        <!-- Width of each indicator line. -->
+        <attr format="dimension" name="lineWidth"/>
+        <!-- Width of each indicator line's stroke. -->
+        <attr name="strokeWidth"/>
+        <!-- Width of the gap between each indicator line. -->
+        <attr format="dimension" name="gapWidth"/>
+        <!-- View background -->
+        <attr name="android:background"/>
+    </declare-styleable>
+
+    <declare-styleable name="TitlePageIndicator">
+        <!-- Screen edge padding. -->
+        <attr format="dimension" name="clipPadding"/>
+        <!-- Color of the footer line and indicator. -->
+        <attr format="color" name="footerColor"/>
+        <!-- Height of the footer line. -->
+        <attr format="dimension" name="footerLineHeight"/>
+        <!-- Style of the indicator. Default is triangle. -->
+        <attr name="footerIndicatorStyle">
+            <enum name="none" value="0"/>
+            <enum name="triangle" value="1"/>
+            <enum name="underline" value="2"/>
+        </attr>
+        <!-- Height of the indicator above the footer line. -->
+        <attr format="dimension" name="footerIndicatorHeight"/>
+        <!-- Left and right padding of the underline indicator. -->
+        <attr format="dimension" name="footerIndicatorUnderlinePadding"/>
+        <!-- Padding between the bottom of the title and the footer. -->
+        <attr format="dimension" name="footerPadding"/>
+        <!-- Position of the line. -->
+        <attr name="linePosition">
+            <enum name="bottom" value="0"/>
+            <enum name="top" value="1"/>
+        </attr>
+        <!-- Color of the selected title. -->
+        <attr name="selectedColor"/>
+        <!-- Whether or not the selected item is displayed as bold. -->
+        <attr format="boolean" name="selectedBold"/>
+        <!-- Color of regular titles. -->
+        <attr name="android:textColor"/>
+        <!-- Size of title text. -->
+        <attr name="android:textSize"/>
+        <!-- Padding between titles when bumping into each other. -->
+        <attr format="dimension" name="titlePadding"/>
+        <!-- Padding between titles and the top of the View. -->
+        <attr format="dimension" name="topPadding"/>
+        <!-- View background -->
+        <attr name="android:background"/>
+    </declare-styleable>
+
+    <declare-styleable name="UnderlinePageIndicator">
+        <!-- Whether or not the selected indicator fades. -->
+        <attr format="boolean" name="fades"/>
+        <!-- Length of the delay to fade the indicator. -->
+        <attr format="integer" name="fadeDelay"/>
+        <!-- Length of the indicator fade to transparent. -->
+        <attr format="integer" name="fadeLength"/>
+        <!-- Color of the selected line that represents the current page. -->
+        <attr name="selectedColor"/>
+        <!-- View background -->
+        <attr name="android:background"/>
+    </declare-styleable>
+    <!-- Page Indicator Style End -->
+
+    <!-- 支持任意View的下拉刷新组件 -->
+    <declare-styleable name="PtrFrameLayout">
+        <!-- Optional. If you put header and content in xml, you can use these to specify them. -->
+        <attr format="reference" name="layout_header"/>
+        <attr format="reference" name="layout_content"/>
+
+        <!-- the resistance when you are moving the frame -->
+        <attr format="float" name="ptr_resistance"/>
+
+        <!-- the ration of the height of the header to trigger refresh -->
+        <attr format="float" name="ptr_ratio_of_header_height_to_refresh"/>
+
+        <attr format="integer" name="ptr_duration_to_close"/>
+        <attr format="integer" name="ptr_duration_to_close_header"/>
+
+        <!-- pull to refresh, otherwise release to refresh, default is release to refresh -->
+        <attr format="boolean" name="ptr_pull_to_fresh"/>
+
+        <!-- keep header when refreshing-->
+        <attr format="boolean" name="ptr_keep_header_when_refresh"/>
+    </declare-styleable>
+
+    <!-- Pull To Refresh Style Start -->
+    <declare-styleable name="PullToRefresh">
+
+        <!-- A drawable to use as the background of the Refreshable View -->
+        <attr format="reference|color" name="ptrRefreshableViewBackground"/>
+
+        <!-- A drawable to use as the background of the Header and Footer Loading Views -->
+        <attr format="reference|color" name="ptrHeaderBackground"/>
+
+        <!-- Text Color of the Header and Footer Loading Views -->
+        <attr format="reference|color" name="ptrHeaderTextColor"/>
+
+        <!-- Text Color of the Header and Footer Loading Views Sub Header -->
+        <attr format="reference|color" name="ptrHeaderSubTextColor"/>
+
+        <!-- Mode of Pull-to-Refresh that should be used -->
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0"/>
+            <flag name="pullFromStart" value="0x1"/>
+            <flag name="pullFromEnd" value="0x2"/>
+            <flag name="both" value="0x3"/>
+            <flag name="manualOnly" value="0x4"/>
+
+            <!-- These last two are depreacted -->
+            <flag name="pullDownFromTop" value="0x1"/>
+            <flag name="pullUpFromBottom" value="0x2"/>
+        </attr>
+
+        <!-- Whether the Indicator overlay(s) should be used -->
+        <attr format="reference|boolean" name="ptrShowIndicator"/>
+
+        <!-- Drawable to use as Loading Indicator. Changes both Header and Footer. -->
+        <attr format="reference" name="ptrDrawable"/>
+
+        <!-- Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. -->
+        <attr format="reference" name="ptrDrawableStart"/>
+
+        <!-- Drawable to use as Loading Indicator in the Footer View. Overrides value set in ptrDrawable. -->
+        <attr format="reference" name="ptrDrawableEnd"/>
+
+        <!-- Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh. -->
+        <attr format="reference|boolean" name="ptrOverScroll"/>
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views -->
+        <attr format="reference" name="ptrHeaderTextAppearance"/>
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr format="reference" name="ptrSubHeaderTextAppearance"/>
+
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0"/>
+            <flag name="flip" value="0x1"/>
+            <flag name="climb" value="0x2"/>
+        </attr>
+
+        <!-- Whether the user can scroll while the View is Refreshing -->
+        <attr format="reference|boolean" name="ptrScrollingWhileRefreshingEnabled"/>
+
+        <!--
+        	Whether PullToRefreshListView has it's extras enabled. This allows the user to be
+        	able to scroll while refreshing, and behaves better. It acheives this by adding
+        	Header and/or Footer Views to the ListView.
+        -->
+        <attr format="reference|boolean" name="ptrListViewExtrasEnabled"/>
+
+        <!--
+        	Whether the Drawable should be continually rotated as you pull. This only
+        	takes effect when using the 'Rotate' Animation Style.
+        -->
+        <attr format="reference|boolean" name="ptrRotateDrawableWhilePulling"/>
+
+        <attr format="reference" name="contentId"/>
+        <!-- BELOW HERE ARE DEPRECEATED. DO NOT USE. -->
+        <attr format="reference|color" name="ptrAdapterViewBackground"/>
+        <attr format="reference" name="ptrDrawableTop"/>
+        <attr format="reference" name="ptrDrawableBottom"/>
+    </declare-styleable>
+    <!-- Pull To Refresh Style End -->
+
+    <attr format="boolean" name="centered"/>
+    <attr format="color" name="selectedColor"/>
+    <attr format="dimension" name="strokeWidth"/>
+    <attr format="color" name="unselectedColor"/>
+
+    <!--smartTabLayout的属性-->
+    <declare-styleable name="stl_SmartTabLayout">
+        <attr format="boolean" name="stl_indicatorAlwaysInCenter"/>
+        <attr format="boolean" name="stl_indicatorWithoutPadding"/>
+        <attr format="boolean" name="stl_indicatorInFront"/>
+        <attr format="enum" name="stl_indicatorInterpolation">
+            <enum name="smart" value="0"/>
+            <enum name="linear" value="1"/>
+        </attr>
+        <attr format="enum" name="stl_indicatorGravity">
+            <enum name="bottom" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="center" value="2"/>
+        </attr>
+        <attr format="color" name="stl_indicatorColor"/>
+        <attr format="reference" name="stl_indicatorColors"/>
+        <attr format="dimension" name="stl_indicatorThickness"/>
+        <attr format="dimension" name="stl_indicatorCornerRadius"/>
+        <attr format="dimension" name="stl_indicatorOffset"/>
+        <attr format="color" name="stl_overlineColor"/>
+        <attr format="dimension" name="stl_overlineThickness"/>
+        <attr format="color" name="stl_underlineColor"/>
+        <attr format="dimension" name="stl_underlineThickness"/>
+        <attr format="color" name="stl_dividerColor"/>
+        <attr format="reference" name="stl_dividerColors"/>
+        <attr format="dimension" name="stl_dividerThickness"/>
+        <attr format="reference" name="stl_defaultTabBackground"/>
+        <attr format="boolean" name="stl_defaultTabTextAllCaps"/>
+        <attr format="color|reference" name="stl_defaultTabTextColor"/>
+        <attr format="dimension" name="stl_defaultTabTextSize"/>
+        <attr format="dimension" name="stl_defaultTabTextHorizontalPadding"/>
+        <attr format="dimension" name="stl_defaultTabTextMinWidth"/>
+        <attr format="reference" name="stl_customTabTextLayoutId"/>
+        <attr format="reference" name="stl_customTabTextViewId"/>
+        <attr format="boolean" name="stl_distributeEvenly"/>
+        <attr format="boolean" name="stl_clickable"/>
+        <attr format="boolean" name="stl_textUnderlineIndicater"/>
+
+        <attr format="dimension" name="stl_indicatorWidth">
+            <enum name="auto" value="-1"/>
+        </attr>
+        <attr format="dimension" name="stl_indicatorPadding">
+            <enum name="auto" value="0"/>
+        </attr>
+        <attr format="dimension" name="stl_indicatorPaddingLeft">
+            <enum name="auto" value="0"/>
+        </attr>
+        <attr format="dimension" name="stl_indicatorPaddingRight">
+            <enum name="auto" value="0"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="superslim_GridSLM">
+        <attr format="dimension" name="slm_grid_columnWidth"/>
+        <attr format="enum|integer" name="slm_grid_numColumns">
+            <enum name="auto_fit" value="-1"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- superslim_LayoutManager的属性 -->
+    <declare-styleable name="superslim_LayoutManager">
+        <attr format="boolean" name="slm_isHeader"/>
+        <attr name="slm_headerDisplay">
+            <flag name="inline" value="0x01"/>
+            <flag name="start" value="0x02"/>
+            <flag name="end" value="0x04"/>
+            <flag name="overlay" value="0x08"/>
+            <flag name="sticky" value="0x10"/>
+        </attr>
+        <attr format="integer" name="slm_section_firstPosition"/>
+        <attr format="enum|string" name="slm_section_sectionManager">
+            <enum name="linear" value="0x01"/>
+            <enum name="grid" value="0x02"/>
+            <enum name="staggered_grid" value="0x03"/>
+        </attr>
+        <attr format="enum|dimension" name="slm_section_headerMarginStart">
+            <enum name="match_header" value="-1"/>
+        </attr>
+        <attr format="enum|dimension" name="slm_section_headerMarginEnd">
+            <enum name="match_header" value="-1"/>
+        </attr>
+    </declare-styleable>
+
+    <!--贝塞尔曲线侧边索引条-->
+    <declare-styleable name="FancyIndexer">
+        <attr format="dimension" name="widthOffset"/>
+        <attr format="dimension" name="minFontSize"/>
+        <attr format="dimension" name="maxFontSize"/>
+        <attr format="dimension" name="tipFontSize"/>
+        <attr format="boolean" name="isDrawCenterLetter"/>
+        <attr format="dimension" name="maxBezierHeight"/>
+        <attr format="dimension" name="maxBezierWidth"/>
+        <attr format="integer" name="maxBezierLines"/>
+        <attr format="dimension" name="additionalTipOffset"/>
+        <attr format="color" name="fontColor"/>
+        <attr format="color" name="tipFontColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightView">
+        <attr format="reference|float" name="mhv_HeightRatio"/>
+        <attr format="reference|dimension" name="mhv_HeightDimen"/>
+    </declare-styleable>
+
+    <!--titleLayout的属性-->
+    <declare-styleable name="titleLayout">
+        <!--显示的flag-->
+        <attr name="elements">
+            <flag name="backIcon" value="0x10"/>
+            <flag name="scanIcon" value="0x20"/>
+            <flag name="settingIcon" value="0x40"/>
+            <flag name="closeIcon" value="0x80"/>
+            <flag name="leftImage" value="0x100"/>
+            <flag name="leftViewGroup" value="0x200"/>
+            <flag name="leftText" value="0x400"/>
+            <flag name="menuIcon" value="0x800"/>
+            <flag name="shareIcon" value="0x1000"/>
+            <flag name="deleteIcon" value="0x2000"/>
+            <flag name="messageIcon" value="0x4000"/>
+            <flag name="searchIcon" value="0x8000"/>
+            <flag name="rightCheckIcon" value="0x10000"/>
+            <flag name="rightImage" value="0x20000"/>
+            <flag name="rightViewGroup" value="0x40000"/>
+            <flag name="rightText" value="0x80000"/>
+            <flag name="titleText" value="0x100000"/>
+            <flag name="tabLayout" value="0x200000"/>
+            <flag name="searchBar" value="0x400000"/>
+            <flag name="centerViewGroup" value="0x800000"/>
+        </attr>
+
+        <!--左边部分-->
+        <attr format="reference" name="backIcon"/>
+        <attr format="reference" name="scanIcon"/>
+        <attr format="reference" name="settingIcon"/>
+        <attr format="reference" name="closeIcon"/>
+        <attr format="reference" name="leftImage"/>
+        <attr format="reference" name="leftViewGroup"/>
+        <attr format="string" name="leftText"/>
+        <attr format="color" name="leftTextColor"/>
+        <attr format="dimension" name="leftTextSize"/>
+        <!--右边部分-->
+        <attr format="reference" name="menuIcon"/>
+        <attr format="reference" name="shareIcon"/>
+        <attr format="reference" name="messageIcon"/>
+        <attr format="reference" name="searchIcon"/>
+        <attr format="reference" name="deleteIcon"/>
+        <attr format="reference" name="rightCheckIcon"/>
+        <attr format="reference" name="rightImage"/>
+        <attr format="reference" name="rightViewGroup"/>
+        <attr format="string" name="rightText"/>
+        <attr format="color" name="rightTextColor"/>
+        <attr format="dimension" name="rightTextSize"/>
+        <!--中间部分-->
+        <attr format="boolean" name="isImmersive"/>
+        <attr format="boolean" name="centerAbsolutely"/>
+        <attr format="boolean" name="centerAutoPadding"/>
+        <attr format="boolean" name="showBottomLine"/>
+        <attr format="string" name="titleText"/>
+        <attr format="color" name="titleTextColor"/>
+        <attr format="dimension" name="titleTextSize"/>
+        <attr format="boolean" name="searchEditable"/>
+        <attr format="string" name="searchText"/>
+        <attr format="string" name="searchHint"/>
+        <attr format="color" name="searchTextColor"/>
+        <attr format="color" name="searchHintColor"/>
+        <attr format="color" name="searchBackground"/>
+        <attr format="dimension" name="searchTextSize"/>
+        <attr format="reference" name="searchBarHintIcon"/>
+        <attr format="reference" name="searchBarClearIcon"/>
+        <attr format="reference" name="tabLayout"/>
+        <attr format="reference" name="centerViewGroup"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="VerticalNestedScrollLayout">
+        <attr format="boolean" name="isScrollDownWhenFirstItemIsTop"/>
+        <attr format="boolean" name="isAutoScroll"/>
+        <attr format="dimension" name="headerRetainHeight"/>
+        <attr format="dimension" name="autoScrollDistanceThreshold"/>
+    </declare-styleable>
+
+    <attr format="reference" name="title"/>
+    <declare-styleable name="BadgeViewPro">
+        <attr format="integer" name="shape">
+            <enum name="shape_circle" value="0"/>
+            <enum name="shape_oval" value="1"/>
+            <enum name="shape_rectangle" value="2"/>
+            <enum name="shape_round_rectangle" value="3"/>
+        </attr>
+        <attr format="dimension" name="textSize"/>
+        <attr format="color" name="textColor"/>
+        <attr format="color" name="bgColor"/>
+        <attr format="integer" name="shape_type"/>
+    </declare-styleable>
+    <declare-styleable name="BottomBuyButtonView">
+        <attr name="showType">
+            <flag name="start" value="0"/>
+            <flag name="special" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>
