@@ -1,4 +1,4 @@
-package com.klui.demo.app;
+package com.klui.demo.modules.main;
 
 import android.content.Intent;
 import android.view.View;
@@ -6,7 +6,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.klui.demo.R;
+import com.klui.demo.app.BaseActivity;
 import com.klui.demo.modules.nestedscroll.NestedScrollLayoutActivity;
+import com.klui.demo.modules.refresh.SmartRefreshActivity;
 import com.klui.demo.modules.smarttablayout.SmartTabLayoutActivity;
 
 /**
@@ -44,6 +46,7 @@ public class MainActivity extends BaseActivity {
                         startActivity(new Intent(MainActivity.this, SmartTabLayoutActivity.class));
                         break;
                     case 3:
+                        startActivity(new Intent(MainActivity.this, SmartRefreshActivity.class));
                         break;
                     case 4:
                         break;

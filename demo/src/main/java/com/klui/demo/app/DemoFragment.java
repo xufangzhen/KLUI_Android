@@ -30,7 +30,7 @@ public class DemoFragment extends BaseFragment {
 
     @Override
     public int getContentViewID() {
-        return R.layout.demo_fragment;
+        return R.layout.fragment_demo;
     }
 
     @Override

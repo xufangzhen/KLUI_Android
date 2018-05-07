@@ -30,7 +30,7 @@ public class SmartTabLayoutActivity extends BaseActivity {
 
     @Override
     public int getContentViewID() {
-        return R.layout.tab_layout_activity;
+        return R.layout.activity_tab_layout;
     }
 
     @Override

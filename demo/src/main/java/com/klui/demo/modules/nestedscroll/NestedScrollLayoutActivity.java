@@ -24,7 +24,7 @@ public class NestedScrollLayoutActivity extends BaseActivity {
 
     @Override
     public int getContentViewID() {
-        return R.layout.nested_scroll_activity;
+        return R.layout.activity_nested_scroll;
     }
 
     @Override

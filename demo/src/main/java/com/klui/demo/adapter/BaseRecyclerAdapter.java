@@ -14,14 +14,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by SCWANG on 2017/6/11.
- */
-
 @SuppressWarnings({ "UnusedReturnValue", "unused" })
 public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<SmartViewHolder> implements ListAdapter {
-
-    //<editor-fold desc="BaseRecyclerAdapter">
 
     private final int mLayoutId;
     private final List<T> mList;
@@ -48,7 +42,6 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<SmartV
         this.mList = new ArrayList<>(collection);
         this.mLayoutId = layoutId;
     }
-    //</editor-fold>
 
     private void addAnimate(SmartViewHolder holder, int postion) {
         if (mOpenAnimationEnable && mLastPosition < postion) {
@@ -58,7 +51,6 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<SmartV
         }
     }
 
-    //<editor-fold desc="RecyclerAdapter">
     @Override
     public SmartViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new SmartViewHolder(LayoutInflater.from(parent.getContext()).inflate(mLayoutId, parent, false),
@@ -87,10 +79,6 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<SmartV
         this.mOpenAnimationEnable = enabled;
     }
 
-    //</editor-fold>
-
-    //<editor-fold desc="API">
-
     public BaseRecyclerAdapter<T> setOnItemClickListener(AdapterView.OnItemClickListener listener) {
         mListener = listener;
         return this;
@@ -111,44 +99,33 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<SmartV
         notifyListDataSetChanged();
         return this;
     }
-    //</editor-fold>
 
-    //<editor-fold desc="ListAdapter">
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
 
-    //    public boolean hasStableIds() {
-    //        return false;
-    //    }
-
+    @Override
     public void registerDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.registerObserver(observer);
     }
 
+    @Override
     public void unregisterDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.unregisterObserver(observer);
     }
 
-    /**
-     * Notifies the attached observers that the underlying data has been changed
-     * and any View reflecting the data set should refresh itself.
-     */
     public void notifyListDataSetChanged() {
         mDataSetObservable.notifyChanged();
     }
 
-    /**
-     * Notifies the attached observers that the underlying data is no longer valid
-     * or available. Once invoked this adapter is no longer valid and should
-     * not report further data set changes.
-     */
     public void notifyDataSetInvalidated() {
         mDataSetObservable.notifyInvalidated();
     }
 
+    @Override
     public boolean areAllItemsEnabled() {
         return true;
     }
 
+    @Override
     public boolean isEnabled(int position) {
         return true;
     }
@@ -193,6 +170,4 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<SmartV
     public int getCount() {
         return mList.size();
     }
-
-    //</editor-fold>
 }
