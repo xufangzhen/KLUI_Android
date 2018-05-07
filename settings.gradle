@@ -1,1 +1,1 @@
-include ':kluidemo', ':base'
+include ':demo', ':klui'

@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KLUI_Android.iml" filepath="$PROJECT_DIR$/KLUI_Android.iml" />
       <module fileurl="file://D:\Kaola\1\KLUI_Android\kluidemo\app.iml" filepath="D:\Kaola\1\KLUI_Android\kluidemo\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kluidemo/kluidemo.iml" filepath="$PROJECT_DIR$/kluidemo/kluidemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/klui/klui.iml" filepath="$PROJECT_DIR$/klui/klui.iml" />
     </modules>
   </component>
 </project>
