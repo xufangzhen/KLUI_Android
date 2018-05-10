@@ -54,19 +54,11 @@ public class SmartRefreshActivity extends BaseActivity {
         refreshLayout.setEnableAutoLoadMore(true);
         refreshLayout.autoRefresh();
         //设置下拉刷新
-        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NonNull final RefreshLayout refreshLayout) {
-                refreshLayout.getLayout().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.refresh(mockData());
-                        refreshLayout.finishRefresh();
-                        refreshLayout.setNoMoreData(false);
-                    }
-                }, 2000);
-            }
-        });
+        refreshLayout.setOnRefreshListener(refreshLayout1 -> refreshLayout1.getLayout().postDelayed(() -> {
+            mAdapter.refresh(mockData());
+            refreshLayout1.finishRefresh();
+            refreshLayout1.setNoMoreData(false);
+        }, 500));
         //设置上拉加载
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override

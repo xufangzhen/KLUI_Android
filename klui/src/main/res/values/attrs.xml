@@ -130,7 +130,7 @@
         <attr format="color" name="layout_srlBackgroundColor"/>
     </declare-styleable>
 
-    <declare-styleable name="BezierRadarHeader">
+    <declare-styleable name="KoalaBearHeader">
         <attr name="srlPrimaryColor"/>
         <attr name="srlAccentColor"/>
         <attr name="srlEnableHorizontalDrag"/>

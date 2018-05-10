@@ -52,7 +52,7 @@ public abstract class InternalAbstract extends RelativeLayout implements Refresh
 
     @Override
     @Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (mWrapperView instanceof RefreshInternal) {
             ((RefreshInternal) mWrapperView).setPrimaryColors(colors);
         }
@@ -144,7 +144,8 @@ public abstract class InternalAbstract extends RelativeLayout implements Refresh
     }
 
     @Override
-    public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
+    public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState,
+            @NonNull RefreshState newState) {
         if (mWrapperView instanceof RefreshInternal) {
             ((RefreshInternal) mWrapperView).onStateChanged(refreshLayout, oldState, newState);
         }
