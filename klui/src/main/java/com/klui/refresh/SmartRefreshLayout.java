@@ -48,7 +48,7 @@ import com.klui.refresh.constant.DimensionStatus;
 import com.klui.refresh.constant.RefreshState;
 import com.klui.refresh.constant.SpinnerStyle;
 import com.klui.refresh.footer.BallPulseFooter;
-import com.klui.refresh.header.KoalaBearHeader;
+import com.klui.refresh.header.KaolaBearHeader;
 import com.klui.refresh.impl.RefreshContentWrapper;
 import com.klui.refresh.impl.RefreshFooterWrapper;
 import com.klui.refresh.impl.RefreshHeaderWrapper;
@@ -214,7 +214,7 @@ public class SmartRefreshLayout extends ViewGroup
         @NonNull
         @Override
         public RefreshHeader createRefreshHeader(@NonNull Context context, @NonNull RefreshLayout layout) {
-            return new KoalaBearHeader(context);
+            return new KaolaBearHeader(context);
         }
     };
 

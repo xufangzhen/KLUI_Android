@@ -130,12 +130,6 @@
         <attr format="color" name="layout_srlBackgroundColor"/>
     </declare-styleable>
 
-    <declare-styleable name="KoalaBearHeader">
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlEnableHorizontalDrag"/>
-    </declare-styleable>
-
     <declare-styleable name="BallPulseFooter">
         <attr name="srlClassicsSpinnerStyle"/>
         <attr format="color" name="srlAnimatingColor"/>
