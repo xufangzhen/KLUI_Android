@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="main_category">
-        <item> TitleLayout </item>
+        <item> TitleLayout(占位) </item>
         <item> VerticalNestedScrollLayout </item>
         <item> SmartTabLayout </item>
         <item> SmartRefreshLayout </item>

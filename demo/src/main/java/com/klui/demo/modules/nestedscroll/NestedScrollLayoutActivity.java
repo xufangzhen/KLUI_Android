@@ -86,6 +86,31 @@ public class NestedScrollLayoutActivity extends BaseActivity {
                     this.imageId = R.mipmap.image_practice_repast_5;
                     this.avatarId = R.mipmap.image_avatar_5;
                 }}, new Model() {{
+                    this.name = "盐菜饭";
+                    this.nickname = "等着你回来";
+                    this.imageId = R.mipmap.image_practice_repast_5;
+                    this.avatarId = R.mipmap.image_avatar_5;
+                }}, new Model() {{
+                    this.name = "盐菜饭";
+                    this.nickname = "等着你回来";
+                    this.imageId = R.mipmap.image_practice_repast_5;
+                    this.avatarId = R.mipmap.image_avatar_5;
+                }}, new Model() {{
+                    this.name = "盐菜饭";
+                    this.nickname = "等着你回来";
+                    this.imageId = R.mipmap.image_practice_repast_5;
+                    this.avatarId = R.mipmap.image_avatar_5;
+                }}, new Model() {{
+                    this.name = "盐菜饭";
+                    this.nickname = "等着你回来";
+                    this.imageId = R.mipmap.image_practice_repast_5;
+                    this.avatarId = R.mipmap.image_avatar_5;
+                }}, new Model() {{
+                    this.name = "盐菜饭";
+                    this.nickname = "等着你回来";
+                    this.imageId = R.mipmap.image_practice_repast_5;
+                    this.avatarId = R.mipmap.image_avatar_5;
+                }}, new Model() {{
                     this.name = "米豆腐";
                     this.nickname = "宝宝树人";
                     this.imageId = R.mipmap.image_practice_repast_6;

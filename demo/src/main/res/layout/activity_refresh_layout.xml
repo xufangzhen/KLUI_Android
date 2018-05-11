@@ -15,7 +15,7 @@
         srl:srlEnableScrollContentWhenLoaded="true"
         >
 
-        <com.klui.refresh.header.KoalaBearHeader
+        <com.klui.refresh.header.KaolaBearHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
