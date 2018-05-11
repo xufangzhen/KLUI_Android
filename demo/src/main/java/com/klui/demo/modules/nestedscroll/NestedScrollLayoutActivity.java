@@ -1,13 +1,20 @@
 package com.klui.demo.modules.nestedscroll;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.klui.demo.R;
 import com.klui.demo.adapter.BaseRecyclerAdapter;
 import com.klui.demo.adapter.SmartViewHolder;
 import com.klui.demo.app.BaseActivity;
+import com.klui.refresh.SmartRefreshLayout;
+import com.klui.refresh.api.RefreshLayout;
+import com.klui.refresh.listener.OnLoadMoreListener;
+import com.klui.scroll.VerticalNestedScrollLayout;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,8 +26,11 @@ import java.util.Collection;
  */
 public class NestedScrollLayoutActivity extends BaseActivity {
 
-    private RecyclerView mRecyclerView;
     private BaseRecyclerAdapter<Model> mAdapter;
+
+    private RecyclerView mRecyclerView;
+    private SmartRefreshLayout mRefreshLayout;
+    private VerticalNestedScrollLayout mVerticalNestedScrollLayout;
 
     @Override
     public int getContentViewID() {
@@ -34,10 +44,12 @@ public class NestedScrollLayoutActivity extends BaseActivity {
 
     @Override
     public void initData() {
+
+        //加载数据
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(
-                mAdapter = new BaseRecyclerAdapter<Model>(loadModels(), R.layout.listitem_practice_repast) {
+                mAdapter = new BaseRecyclerAdapter<Model>(mockData(), R.layout.listitem_practice_repast) {
                     @Override
                     protected void onBindViewHolder(SmartViewHolder holder, Model model, int position) {
                         holder.text(R.id.name, model.name);
@@ -46,6 +58,46 @@ public class NestedScrollLayoutActivity extends BaseActivity {
                         holder.image(R.id.avatar, model.avatarId);
                     }
                 });
+
+        //设置嵌套滚动
+        mVerticalNestedScrollLayout = findViewById(R.id.nested_scroll_layout);
+        mVerticalNestedScrollLayout.setOnScrollYListener(new VerticalNestedScrollLayout.OnScrollYListener() {
+            @Override
+            public void onScrolling(int scrollY, boolean isTop, boolean isBottom) {
+                Log.e("xfz", "int scrollY, boolean isTop, boolean isBottom" + scrollY + "  " + isTop + "  " + isBottom);
+                if (isBottom) {
+                    mRefreshLayout.setEnableRefresh(true);
+                } else {
+                    mRefreshLayout.setEnableRefresh(false);
+                }
+            }
+        });
+
+        mRefreshLayout = findViewById(R.id.smart_refresh_layout);
+        //设置下拉刷新
+        mRefreshLayout.setOnRefreshListener(refreshLayout1 -> refreshLayout1.getLayout().postDelayed(() -> {
+            mAdapter.refresh(mockData());
+            refreshLayout1.finishRefresh();
+            refreshLayout1.setNoMoreData(false);
+        }, 500));
+        //设置上拉加载
+        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull final RefreshLayout refreshLayout) {
+                refreshLayout.getLayout().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mAdapter.getItemCount() > 30) {
+                            Toast.makeText(getApplication(), "数据全部加载完毕", Toast.LENGTH_SHORT).show();
+                            refreshLayout.finishLoadMoreWithNoMoreData();//将不会再次触发加载更多事件
+                        } else {
+                            mAdapter.loadMore(mockData());
+                            refreshLayout.finishLoadMore();
+                        }
+                    }
+                }, 2000);
+            }
+        });
     }
 
     private class Model {
@@ -58,7 +110,7 @@ public class NestedScrollLayoutActivity extends BaseActivity {
     /**
      * 模拟数据
      */
-    private Collection<Model> loadModels() {
+    private Collection<Model> mockData() {
         return Arrays.asList(
                 new Model() {{
                     this.name = "但家香酥鸭";
