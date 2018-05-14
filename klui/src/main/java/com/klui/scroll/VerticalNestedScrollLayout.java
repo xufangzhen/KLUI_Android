@@ -268,6 +268,7 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
         mScrollAnimator.setDuration(time);
         mScrollAnimator.addUpdateListener(valueAnimator -> {
             scrollTo(0, (Integer) valueAnimator.getAnimatedValue());
+            scrollCallback();
         });
         mScrollAnimator.start();
     }

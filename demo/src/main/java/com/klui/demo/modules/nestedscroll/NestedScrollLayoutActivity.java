@@ -62,7 +62,7 @@ public class NestedScrollLayoutActivity extends BaseActivity {
         //设置嵌套滚动
         mVerticalNestedScrollLayout = findViewById(R.id.nested_scroll_layout);
         mVerticalNestedScrollLayout.setOnScrollYListener((scrollY, percent, isTop, isBottom) -> {
-            Log.e("xfz", "int scrollY, float percent, boolean isTop, boolean isBottom"
+            Log.e("xfz", "int scrollY, float percent, boolean isTop, boolean isBottom   "
                     + scrollY
                     + "  "
                     + percent
