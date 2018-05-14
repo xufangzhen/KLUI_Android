@@ -35,6 +35,10 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
      */
     private int mHeaderRetainHeight;
     /**
+     * 最大滚动时间
+     */
+    private int mMaxScrollTime;
+    /**
      * 最大可滚动距离
      */
     private int mMaxScrollHeight;
@@ -90,6 +94,7 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
                 a.getBoolean(R.styleable.VerticalNestedScrollLayout_isScrollDownWhenFirstItemIsTop, false);
         mIsAutoScroll = a.getBoolean(R.styleable.VerticalNestedScrollLayout_isAutoScroll, false);
         mHeaderRetainHeight = (int) a.getDimension(R.styleable.VerticalNestedScrollLayout_headerRetainHeight, 0);
+        mMaxScrollTime = (int) a.getDimension(R.styleable.VerticalNestedScrollLayout_maxScrollTime, 500);
         mAutoScrollDistanceThreshold =
                 (int) a.getDimension(R.styleable.VerticalNestedScrollLayout_autoScrollDistanceThreshold, dpToPx(50));
         a.recycle();
@@ -160,9 +165,7 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
         if (canScroll(target, dy)) {
             scrollBy(0, dy);
             consumed[1] = dy;
-            if (mOnScrollToListener != null) {
-                mOnScrollToListener.onScrolling(getScrollY(), mMaxScrollHeight == getScrollY(), getScrollY() == 0);
-            }
+            scrollCallback();
         }
         if (getScrollY() > mMaxScrollHeight) {
             scrollTo(0, mMaxScrollHeight);
@@ -208,9 +211,7 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
     public void computeScroll() {
         if (mScroller.computeScrollOffset()) {
             scrollTo(0, mScroller.getCurrY());
-            if (mOnScrollToListener != null) {
-                mOnScrollToListener.onScrolling(getScrollY(), mMaxScrollHeight == getScrollY(), getScrollY() == 0);
-            }
+            scrollCallback();
             invalidate();
         }
     }
@@ -230,9 +231,7 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
                 autoDownScroll();
             }
         } else {
-            if (mOnScrollToListener != null) {
-                mOnScrollToListener.onScrolling(getScrollY(), mMaxScrollHeight == getScrollY(), getScrollY() == 0);
-            }
+            scrollCallback();
         }
         mIsFling = false;
     }
@@ -264,14 +263,11 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
         mScrollAnimator = ValueAnimator.ofInt(getScrollY(), y);
         mScrollAnimator.setInterpolator(new DecelerateInterpolator(2));
 
-        int time = 400 * Math.abs(getScrollY() - y) / getScreenHeight();
+        int time = mMaxScrollTime * Math.abs(getScrollY() - y) / getMaxScrollHeight();
 
         mScrollAnimator.setDuration(time);
         mScrollAnimator.addUpdateListener(valueAnimator -> {
             scrollTo(0, (Integer) valueAnimator.getAnimatedValue());
-            if (mOnScrollToListener != null) {
-                mOnScrollToListener.onScrolling(getScrollY(), mMaxScrollHeight == getScrollY(), getScrollY() == 0);
-            }
         });
         mScrollAnimator.start();
     }
@@ -285,10 +281,17 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
         return hiddenTop || showTop;
     }
 
+    private void scrollCallback() {
+        if (mOnScrollToListener != null) {
+            mOnScrollToListener.onScrolling(getScrollY(), (float) getScrollY() / mMaxScrollHeight,
+                    mMaxScrollHeight == getScrollY(), getScrollY() == 0);
+        }
+    }
+
     OnScrollYListener mOnScrollToListener;
 
     public interface OnScrollYListener {
-        void onScrolling(int scrollY, boolean isTop, boolean isBottom);
+        void onScrolling(int scrollY, float percent, boolean isTop, boolean isBottom);
     }
 
     public void setOnScrollYListener(OnScrollYListener onScrollToListener) {

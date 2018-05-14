@@ -61,15 +61,19 @@ public class NestedScrollLayoutActivity extends BaseActivity {
 
         //设置嵌套滚动
         mVerticalNestedScrollLayout = findViewById(R.id.nested_scroll_layout);
-        mVerticalNestedScrollLayout.setOnScrollYListener(new VerticalNestedScrollLayout.OnScrollYListener() {
-            @Override
-            public void onScrolling(int scrollY, boolean isTop, boolean isBottom) {
-                Log.e("xfz", "int scrollY, boolean isTop, boolean isBottom" + scrollY + "  " + isTop + "  " + isBottom);
-                if (isBottom) {
-                    mRefreshLayout.setEnableRefresh(true);
-                } else {
-                    mRefreshLayout.setEnableRefresh(false);
-                }
+        mVerticalNestedScrollLayout.setOnScrollYListener((scrollY, percent, isTop, isBottom) -> {
+            Log.e("xfz", "int scrollY, float percent, boolean isTop, boolean isBottom"
+                    + scrollY
+                    + "  "
+                    + percent
+                    + "  "
+                    + isTop
+                    + "  "
+                    + isBottom);
+            if (isBottom) {
+                mRefreshLayout.setEnableRefresh(true);
+            } else {
+                mRefreshLayout.setEnableRefresh(false);
             }
         });
 

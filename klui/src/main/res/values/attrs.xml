@@ -57,6 +57,7 @@
         <attr format="boolean" name="isScrollDownWhenFirstItemIsTop"/>
         <attr format="boolean" name="isAutoScroll"/>
         <attr format="dimension" name="headerRetainHeight"/>
+        <attr format="dimension" name="maxScrollTime"/>
         <attr format="dimension" name="autoScrollDistanceThreshold"/>
     </declare-styleable>
 
