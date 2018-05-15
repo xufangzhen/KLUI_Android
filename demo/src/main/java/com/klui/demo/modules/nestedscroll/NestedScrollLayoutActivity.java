@@ -28,6 +28,7 @@ public class NestedScrollLayoutActivity extends BaseActivity {
 
     private BaseRecyclerAdapter<Model> mAdapter;
 
+    private SeedingSearchBarLayout mBodySearchBar;
     private RecyclerView mRecyclerView;
     private SmartRefreshLayout mRefreshLayout;
     private VerticalNestedScrollLayout mVerticalNestedScrollLayout;
@@ -44,6 +45,22 @@ public class NestedScrollLayoutActivity extends BaseActivity {
 
     @Override
     public void initData() {
+
+        mBodySearchBar = findViewById(R.id.seeding_search_layout);
+        mBodySearchBar.postDelayed(() -> {
+            mBodySearchBar.setStartLayout(DensityUtil.dp2px(15),
+                    DensityUtil.dp2px(83),
+                    DensityUtil.dp2px(305),
+                    DensityUtil.dp2px(120.5f));
+
+            mBodySearchBar.setEndLayout(DensityUtil.dp2px(50),
+                    DensityUtil.dp2px(13.5f),
+                    DensityUtil.dp2px(250),
+                    DensityUtil.dp2px(40.5f));
+        }, 100);
+
+        mBodySearchBar.setColorAndWidth(DensityUtil.dp2px(1), DensityUtil.dp2px(2),
+                0xff666666, 0xff333333);
 
         //加载数据
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -62,6 +79,7 @@ public class NestedScrollLayoutActivity extends BaseActivity {
         //设置嵌套滚动
         mVerticalNestedScrollLayout = findViewById(R.id.nested_scroll_layout);
         mVerticalNestedScrollLayout.setOnScrollYListener((scrollY, percent, isTop, isBottom) -> {
+            mBodySearchBar.onGradualChange(scrollY, percent, isTop, isBottom);
             Log.e("xfz", "int scrollY, float percent, boolean isTop, boolean isBottom   "
                     + scrollY
                     + "  "
@@ -70,15 +88,12 @@ public class NestedScrollLayoutActivity extends BaseActivity {
                     + isTop
                     + "  "
                     + isBottom);
-            if (isBottom) {
-                mRefreshLayout.setEnableRefresh(true);
-            } else {
-                mRefreshLayout.setEnableRefresh(false);
-            }
         });
 
         mRefreshLayout = findViewById(R.id.smart_refresh_layout);
+        mRefreshLayout.setEnableRefresh(false);
         //设置下拉刷新
+
         mRefreshLayout.setOnRefreshListener(refreshLayout1 -> refreshLayout1.getLayout().postDelayed(() -> {
             mAdapter.refresh(mockData());
             refreshLayout1.finishRefresh();

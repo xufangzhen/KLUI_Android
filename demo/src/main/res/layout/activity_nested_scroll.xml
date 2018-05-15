@@ -11,7 +11,7 @@
         android:id="@+id/nested_scroll_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        vnsl:headerRetainHeight="44dp"
+        vnsl:headerRetainHeight="100dp"
         vnsl:isAutoScroll="true"
         vnsl:isScrollDownWhenFirstItemIsTop="true"
         >
@@ -60,5 +60,12 @@
             />
 
     </com.klui.scroll.VerticalNestedScrollLayout>
+
+    <com.klui.demo.modules.nestedscroll.SeedingSearchBarLayout
+        android:id="@+id/seeding_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="37.5dp"
+        android:background="@color/colorPrimary"
+        />
 
 </com.klui.refresh.SmartRefreshLayout>

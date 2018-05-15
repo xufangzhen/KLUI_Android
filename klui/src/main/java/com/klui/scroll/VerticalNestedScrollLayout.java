@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -284,8 +285,10 @@ public class VerticalNestedScrollLayout extends LinearLayout implements NestedSc
 
     private void scrollCallback() {
         if (mOnScrollToListener != null) {
-            mOnScrollToListener.onScrolling(getScrollY(), (float) getScrollY() / mMaxScrollHeight,
-                    mMaxScrollHeight == getScrollY(), getScrollY() == 0);
+            mOnScrollToListener.onScrolling(Math.min(mMaxScrollHeight, Math.max(getScrollY(), 0)),
+                    Math.min(1, Math.max((float) getScrollY() / mMaxScrollHeight, 0)),
+                    getScrollY() >= mMaxScrollHeight,
+                    getScrollY() <= 0);
         }
     }
 
