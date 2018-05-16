@@ -58,7 +58,7 @@ public class SmartRefreshActivity extends BaseActivity {
             mAdapter.refresh(mockData());
             refreshLayout1.finishRefresh();
             refreshLayout1.setNoMoreData(false);
-        }, 500));
+        }, 10000));
         //设置上拉加载
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
